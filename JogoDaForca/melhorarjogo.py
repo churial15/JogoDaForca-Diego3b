@@ -10,7 +10,7 @@ import random
 # MISSÃO DOS ALUNOS:
 # - Adicionar mais palavras
 # - Separar por temas: jogos, tecnologia, escola, filmes etc.
-categorias categorias = {
+categorias = {
     "Musicas": [
         "feel good inc",
         "bones",
@@ -67,7 +67,8 @@ categorias categorias = {
         "lethal company",
         "crash bandicoot",
         "biohazard",
-        "granny"
+        "granny",
+        "alien isolation"
     ],
 
     "Tecnologia": [
@@ -117,7 +118,7 @@ categorias categorias = {
 def escolher_categoria():
 
     print("=" * 40)
-    print("        ESCOLHA UMA CATEGORIA")
+    print("        ESCOLHA UMA CATEGORIA BRABA")
     print("=" * 40)
 
     for categoria in categorias:
@@ -166,7 +167,7 @@ def jogar():
 
     print()
     print("=" * 40)
-    print("        JOGO DA FORCA-PYTHON")
+    print("        JOGO DA FORCA TENSO - PYTHON")
     print("=" * 40)
     print("Categoria:", categoria)
     print("Você tem", vidas, "vidas.")

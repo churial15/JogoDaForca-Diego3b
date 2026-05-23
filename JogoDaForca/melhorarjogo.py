@@ -1,15 +1,17 @@
 # ============================================================
-# JOGO DA FORCA - VERSÃO BASE PARA APRIMORAMENTO DOS ALUNOS
 # Disciplina: Programação no Desenvolvimento de Sistemas
 # Turma: 3º Ano do Ensino Médio Técnico
 # ============================================================
-
-import random
 
 # Lista inicial de palavras
 # MISSÃO DOS ALUNOS:
 # - Adicionar mais palavras
 # - Separar por temas: jogos, tecnologia, escola, filmes etc.
+
+import random
+import os
+import unicodedata
+
 categorias = {
     "Musicas": [
         "feel good inc",
@@ -30,14 +32,15 @@ categorias = {
         "highway to hell",
         "tnt",
         "master of puppets",
-        "song 2"
+        "song two"
     ],
 
     "Bandas": [
         "gorillaz",
         "imagine dragons",
         "led zeppelin",
-        "linkin park"
+        "linkin park",
+        "twenty one pilots"
     ],
 
     "Jogos": [
@@ -105,6 +108,7 @@ categorias = {
         "java",
         "sql",
         "linux",
+        "windows",
         "robotica",
         "bluetooth",
         "gpu",
@@ -114,6 +118,127 @@ categorias = {
         "xml"
     ]
 }
+
+# ============================================================
+# FORCA VISUAL
+# ============================================================
+
+forca = [
+
+"""
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+""",
+
+"""
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+""",
+
+"""
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+""",
+
+"""
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========
+""",
+
+"""
+  +---+
+  |   |
+  O   |
+ /|\\  |
+      |
+      |
+=========
+""",
+
+"""
+  +---+
+  |   |
+  O   |
+ /|\\  |
+ /    |
+      |
+=========
+""",
+
+"""
+  +---+
+  |   |
+  O   |
+ /|\\  |
+ / \\  |
+      |
+=========
+"""
+]
+
+def limpar_tela():
+
+    os.system("cls" if os.name == "nt" else "clear")
+
+
+def remover_acentos(texto):
+
+    return ''.join(
+        c for c in unicodedata.normalize('NFD', texto)
+        if unicodedata.category(c) != 'Mn'
+    )
+
+
+def escolher_dificuldade():
+
+    print("=" * 40)
+    print("         ESCOLHA A DIFICULDADE")
+    print("=" * 40)
+
+    print("1 - Fácil   (8 vidas)")
+    print("2 - Médio   (6 vidas)")
+    print("3 - Difícil (4 vidas)")
+    print("4 - Extremo (2 vidas)")
+    print()
+
+    while True:
+
+        escolha = input("Digite a dificuldade: ")
+
+        if escolha == "1":
+            return 8
+
+        elif escolha == "2":
+            return 6
+
+        elif escolha == "3":
+            return 4
+
+        elif escolha == "4":
+            return 2
+
+        else:
+            print("Opção inválida.\n")
 
 def escolher_categoria():
 
@@ -167,7 +292,7 @@ def jogar():
 
     print()
     print("=" * 40)
-    print("        JOGO DA FORCA TENSO - PYTHON")
+    print("       (ง'̀-'́)ง JOGO DA FORCA TENSO - PYTHON")
     print("=" * 40)
     print("Categoria:", categoria)
     print("Você tem", vidas, "vidas.")
@@ -193,18 +318,18 @@ def jogar():
             continue
 
         if letra in letras_tentadas:
-            print("Você já tentou essa letra.")
+            print("Você já tentou essa letra. ¯_(ツ)_/¯")
             print()
             continue
 
         letras_tentadas.append(letra)
 
         if letra in palavra_secreta:
-            print("Boa! A letra existe na palavra.")
+            print("Boa! A letra existe na palavra. (▀̿Ĺ̯▀̿ ̿)")
             letras_acertadas.append(letra)
             pontos += 10
         else:
-            print("Ops! Essa letra não está na palavra.")
+            print("Ops! Essa letra não está na palavra. (╯°□°）╯︵ ┻━┻")
             vidas -= 1
             pontos -= 2
 
@@ -214,12 +339,14 @@ def jogar():
         venceu = True
 
         for letra_da_palavra in palavra_secreta:
-            if letra_da_palavra not in letras_acertadas:
+
+            if letra_da_palavra != " " and letra_da_palavra not in letras_acertadas:
                 venceu = False
+                break
 
         if venceu:
             print("=" * 40)
-            print("PARABÉNS! VOCÊ VENCEU!")
+            print("PARABÉNS! VOCÊ VENCEU! ( ͡° ͜ʖ ͡°)")
             print("A palavra era:", palavra_secreta)
             print("Pontuação final:", pontos)
             print("=" * 40)
@@ -227,10 +354,28 @@ def jogar():
 
     if vidas == 0:
         print("=" * 40)
-        print("FIM DE JOGO!")
+        print("FIM DE JOGO! (－ω－) zzZ")
         print("A palavra era:", palavra_secreta)
         print("Pontuação final:", pontos)
         print("=" * 40)
+
+# ============================================================
+# LOOP PRINCIPAL
+# ============================================================
+
+while True:
+
+    jogar()
+
+    jogar_novamente = input(
+        "Deseja jogar novamente? (⊙_⊙) (s/n): "
+    ).lower()
+
+    if jogar_novamente != "s":
+
+        print("\nObrigado por jogar! (^▽^)")
+
+        break
 
 # Início do programa
 jogar()

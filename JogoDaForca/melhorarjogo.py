@@ -44,34 +44,73 @@ categorias = {
     ],
 
     "Jogos": [
-        "resident evil",
-        "silent hill",
-        "outlast",
-        "the last of us",
-        "minecraft",
-        "red dead redemption",
-        "cyberpunk",
-        "the witcher",
-        "god of war",
-        "hollow knight",
-        "dead space",
+        "alien isolation",
         "alan wake",
         "amnesia",
-        "subnautica",
-        "terraria",
-        "portal",
-        "half life",
-        "doom eternal",
-        "dark souls",
-        "devil may cry",
-        "super mario world",
-        "cuphead",
-        "poppy playtime",
-        "lethal company",
-        "crash bandicoot",
+        "among us",
+        "bald basics",
         "biohazard",
+        "bloodborne",
+        "chained together",
+        "crash bandicoot",
+        "cuphead",
+        "cyberpunk",
+        "dark souls",
+        "dead space",
+        "Detroit Become Human",
+        "devil may cry",
+        "devour",
+        "doom eternal",
+        "elden ring",
+        "fortnite",
+        "forza",
+        "god of war",
         "granny",
-        "alien isolation"
+        "gta v",
+        "half life",
+        "hollow knight",
+        "lethal company",
+        "little nightmares",
+        "mario kart deluxe",
+        "marvels spider man",
+        "minecraft",
+        "outlast",
+        "overwatch",
+        "phasmophobia",
+        "poppy playtime",
+        "portal",
+        "pratfall",
+        "red dead redemption",
+        "repo",
+        "resident evil",
+        "rocket clank",
+        "rocket league",
+        "silent hill",
+        "stray",
+        "subnautica",
+        "super mario world",
+        "terraria",
+        "the last of us",
+        "The Legend of Zelda",
+        "the mortuary assistant",
+        "the witcher",
+        "undertale",
+        "until dawn",
+        "valorant",
+        "the evil within",
+        "days gone",
+        "dying light",
+        "sons of the forest",
+        "the forest",
+        "Cry of Fear",
+        "soma",
+        "visage",
+        "layers of fear",
+        "dark deception",
+        "backrooms",
+        "buckshot roulette",
+        "iron lung",
+        "fears to fathom"
     ],
 
     "Tecnologia": [
@@ -116,6 +155,57 @@ categorias = {
         "devops",
         "json",
         "xml"
+        "typescript",
+        "nodejs",
+        "react",
+        "vue",
+        "angular",
+        "django",
+        "flask",
+        "firebase",
+        "docker",
+        "kubernetes",
+        "cloud",
+        "aws",
+        "azure",
+        "machine learning",
+        "deep learning",
+        "chatbot",
+        "automacao",
+        "criptografia",
+        "ciberseguranca",
+        "firewall",
+        "wifi",
+        "ethernet",
+        "kernel",
+        "ubuntu",
+        "android",
+        "ios",
+        "virtualizacao",
+        "microchip",
+        "arduino",
+        "engenharia de software",
+        "orientacao a objetos",
+        "estrutura de dados",
+        "debug",
+        "teste",
+        "deploy",
+        "git",
+        "gitlab",
+        "open source",
+        "mobile",
+        "desktop",
+        "nuvem",
+        "streaming",
+        "web",
+        "website",
+        "responsividade",
+        "pixel",
+        "monitor",
+        "mouse",
+        "teclado",
+        "ssd",
+        "memoria ram"
     ]
 }
 
@@ -212,7 +302,7 @@ def remover_acentos(texto):
 def escolher_dificuldade():
 
     print("=" * 40)
-    print("         ESCOLHA A DIFICULDADE")
+    print("      ESCOLHA A DIFICULDADE ATACADA:")
     print("=" * 40)
 
     print("1 - Fácil   (8 vidas)")
@@ -243,7 +333,7 @@ def escolher_dificuldade():
 def escolher_categoria():
 
     print("=" * 40)
-    print("        ESCOLHA UMA CATEGORIA BRABA")
+    print("        ESCOLHA UMA CATEGORIA BRABA:")
     print("=" * 40)
 
     for categoria in categorias:
@@ -287,18 +377,29 @@ def jogar():
     palavra_secreta = escolher_palavra(categoria)
     letras_acertadas = []
     letras_tentadas = []
-    vidas = 6
+    vidas = escolher_dificuldade()
     pontos = 0
 
     print()
     print("=" * 40)
-    print("       (ง'̀-'́)ง JOGO DA FORCA TENSO - PYTHON")
+    print(" (ง'̀-'́)ง JOGO DA FORCA TENSO - PYTHON")
     print("=" * 40)
     print("Categoria:", categoria)
     print("Você tem", vidas, "vidas.")
     print()
 
     while vidas > 0:
+        indice_forca = len(forca) - vidas - 1
+
+        if indice_forca < 0:
+            indice_forca = 0
+
+        if indice_forca >= len(forca):
+            indice_forca = len(forca) - 1
+        if indice_forca < 0:
+           indice_forca = 0
+        print(forca[indice_forca])
+
         print("Palavra:", mostrar_palavra(palavra_secreta, letras_acertadas))
         print("Letras tentadas:", letras_tentadas)
         print("Vidas:", vidas)
@@ -376,6 +477,3 @@ while True:
         print("\nObrigado por jogar! (^▽^)")
 
         break
-
-# Início do programa
-jogar()

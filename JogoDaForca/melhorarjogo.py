@@ -114,6 +114,11 @@ categorias = {
     ],
 
     "Tecnologia": [
+        "computacao grafica",
+        "desenvolvimento de sistemas",
+        "fullstack",
+        "ciencia de dados",
+        "analise e projeto de sistemas",
         "python",
         "programacao",
         "sistema",
@@ -154,7 +159,7 @@ categorias = {
         "cpu",
         "devops",
         "json",
-        "xml"
+        "xml",
         "typescript",
         "nodejs",
         "react",

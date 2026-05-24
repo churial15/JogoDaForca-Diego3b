@@ -88,6 +88,7 @@ categorias = {
         "silent hill",
         "stray",
         "subnautica",
+        "sonic",
         "super mario world",
         "terraria",
         "the last of us",

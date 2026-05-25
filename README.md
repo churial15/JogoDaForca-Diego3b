@@ -1,1 +1,1 @@
-# Jogo-da-forca
+# Melhoramento do *Jogo da forca* em linguagem python

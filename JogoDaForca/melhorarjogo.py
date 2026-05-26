@@ -158,7 +158,13 @@ categorias = {
             "buckshot roulette",
             "iron lung",
             "fears to fathom",
-            "tomb raider"
+            "tomb raider",
+            "level devil",
+            "bomberman",
+            "kirby",
+            "the legend of zelda",
+            "street fighter",
+            "mortal kombat"
     ],
 
     "Tecnologia": [

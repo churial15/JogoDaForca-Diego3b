@@ -157,7 +157,8 @@ categorias = {
             "backrooms",
             "buckshot roulette",
             "iron lung",
-            "fears to fathom"
+            "fears to fathom",
+            "tomb raider"
     ],
 
     "Tecnologia": [

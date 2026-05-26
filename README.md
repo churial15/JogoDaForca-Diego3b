@@ -19,17 +19,6 @@
 - ✅ **Acerto**: +10 pontos
 - ❌ **Erro**: -2 pontos
 
-## 🎨 Visualização da Forca
-
-O jogo exibe uma representação ASCII da forca que evolui conforme você erra:
-  +---------+
-  |         |
-  |         O
-  |        /|\
-  |        / \
-  |
-  +-----
-
 ## 🛠️ Melhorias Implementadas
 
 - [x] Categorias múltiplas de palavras

@@ -24,7 +24,7 @@
 - [x] Categorias múltiplas de palavras
 - [x] Sistema de dificuldades
 - [x] Visualização da forca em ASCII
-- [x] Sistema de pontuação aprimorado
+- [x] Sistema de pontuação
 - [x] Validação melhorada de entrada
 - [x] Interface mais amigável
 
